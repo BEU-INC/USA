@@ -10,6 +10,23 @@
             <field name="subject">{{ object.company_id.name }} Invoice (Ref {{ object.name or 'n/a' }})</field>
             <field name="description">Sent to customers with their invoices in attachment</field>
             <field name="body_html" type="html">
+                <style type="text/css">
+                    @font-face {
+                        font-family: 'Cera Pro';
+                        src: url('https://beu-inc-usa1.odoo.com/web/image/2823?unique=6de584a008b9858f356612935204940c53f5c226');
+                    }
+                    @font-face {
+                        font-family: 'Cera_Pro_Bold';
+                        src: url('https://beu-inc-usa1.odoo.com/web/image/2822?unique=baa64ee6efc7331cbe288054213ae1eb3d4836a1');
+                    }
+                    @font-face {
+                        font-family: 'Mulish';
+                        src: url('https://beu-inc-usa1.odoo.com/web/image/2832?unique=7179fb760aa0d157ad534dbaae5cd1c8a5c0ff11');
+                    }
+                </style>
+                <link href="https://beu-inc-usa1.odoo.com/web/image/2823?unique=6de584a008b9858f356612935204940c53f5c226" rel="stylesheet"/>
+                <link href="https://beu-inc-usa1.odoo.com/web/image/2823?unique=6de584a008b9858f356612935204940c53f5c226" rel="stylesheet"/>
+                <link href="https://beu-inc-usa1.odoo.com/web/image/2847?unique=1a4108d0f818a973f6a13570a6afffa44a28e718" rel="stylesheet"/>
                 <!-- Email 157 -->
                 <div style="padding-bottom:25px;width: 640px;height: auto;background-color: #E9E9E9 !important;border-radius: 37.6471px;">
                     <!-- Group 16088 -->
@@ -31,7 +48,7 @@
                                             </div>
                                         </td>
                                         <td style="width:49%;">
-                                            <div style="text-align:right;font-family: 'Cera Pro';font-style: normal;font-weight: 500;font-size: 14.317px;line-height: 18px;text-align: right;color: #080D1D;">
+                                            <div style="text-align:right;font-family: 'Cera Pro';font-style: normal;font-weight: 700;font-size: 14.317px;line-height: 18px;text-align: right;color: #080D1D !important;">
                                                 Total <span t-out="object.get_amount_str(object.amount_total)"/> COP <br/>
                                                 <span t-out="object.get_invoice_date_print()"/>
                                             </div>
@@ -39,29 +56,29 @@
                                     </tr>
                                 </table>
 
-                                <p style="margin-top: 30px;font-family: 'Mulish';font-style: normal;font-weight: 800;font-size: 23.1637px;line-height: 29px;">Hola, <t t-esc="object.partner_id.name.split(' ')[0]"/></p>
+                                <p style="margin-top: 30px;font-family: 'Mulish';font-style: normal;font-weight: 800;font-size: 23.1637px;line-height: 29px;color: #080D1D !important;">Hola, <t t-esc="object.partner_id.name.split(' ')[0]"/></p>
                                 
-                                <p style="margin-top: 30px;font-family: 'Cera Pro';font-style: normal;font-weight: 500;font-size: 16px;line-height: 20px;">Estimado <b style="font-weight: 800 !important;"><t t-out="object.partner_id.name"/></b>, Aquí está su factura <b style="font-weight: 800 !important;"><t t-out="object.name"/></b> por el importe de <b style="font-weight: 800 !important;"><t t-esc="object.get_amount_str(object.amount_total)"/> COP</b> de <b style="font-weight: 800 !important;">BEU CREATORS S.A.S.</b></p>
-                                <p style="margin-top: 20px;font-family: 'Cera Pro';font-style: normal;font-weight: 500;font-size: 16px;line-height: 20px;">Siempre que realizas una venta te enviamos el recibo por la comisión de uso de la tecnología.</p>
+                                <p style="margin-top: 30px;font-family: 'Cera Pro';font-style: normal;font-weight: 700;font-size: 16px;line-height: 20px;color: #080D1D !important;">Estimado <b style="font-weight: 700 !important;font-size:18px;font-family: 'Cera_Pro_Bold';"><t t-out="object.partner_id.name"/></b>, Aquí está su factura <b style="font-weight: 700 !important;font-size:18px;font-family: 'Cera_Pro_Bold';"><t t-out="object.name"/></b> por el importe de <b style="font-weight: 700 !important;font-size:18px;font-family: 'Cera_Pro_Bold';"><t t-esc="object.get_amount_str(object.amount_total)"/> COP</b> de <b style="font-weight: 700 !important;font-size:18px;font-family: 'Cera_Pro_Bold';">BEU CREATORS S.A.S.</b></p>
+                                <p style="margin-top: 20px;font-family: 'Cera Pro';font-style: normal;font-weight: 700;font-size: 16px;line-height: 20px;color: #080D1D !important;">Siempre que realizas una venta te enviamos el recibo por la comisión de uso de la tecnología.</p>
                                 
-                                <h4 style="margin-top: 30px;font-family: 'Mulish';font-style: normal;font-weight: 800;font-size: 23.1637px;line-height: 29px;">Detalles del producto comprado</h4>
+                                <h4 style="margin-top: 30px;font-style: normal;font-weight: 700;font-size: 23.1637px;line-height: 29px;color: #080D1D !important;font-family: 'Cera_Pro_Bold';">Detalles del producto comprado</h4>
 
                                 <ul style="margin-top: 15px;list-style-type: disc;margin-bottom: 50px;">
-                                    <li style="font-family: 'Cera Pro';font-style: normal;font-size: 16px;line-height: 20px;"><b style="font-weight: 700;">Producto:</b> <t t-esc="object.get_product_names()"/></li>
-                                    <li style="font-family: 'Cera Pro';font-style: normal;font-size: 16px;line-height: 20px;"><b style="font-weight: 700;">Productor:</b> <t t-esc="object.partner_id.name"/></li>
-                                    <li style="font-family: 'Cera Pro';font-style: normal;font-size: 16px;line-height: 20px;"><b style="font-weight: 700;">Fecha de compra:</b> <span t-out="object.get_invoice_date_print()"/></li>
+                                    <li style="font-family: 'Cera_Pro_Bold';font-style: normal;font-size: 16px;line-height: 20px;"><b style="font-weight: 700;color: #080D1D !important;">Producto:</b> <span style="font-family: 'Cera Pro';font-weight: 700;" t-esc="object.get_product_names()"/></li>
+                                    <li style="font-family: 'Cera_Pro_Bold';font-style: normal;font-size: 16px;line-height: 20px;"><b style="font-weight: 700;color: #080D1D !important;">Productor:</b> <span style="font-family: 'Cera Pro';font-weight: 700;" t-esc="object.partner_id.name"/></li>
+                                    <li style="font-family: 'Cera_Pro_Bold';font-style: normal;font-size: 16px;line-height: 20px;"><b style="font-weight: 700;color: #080D1D !important;">Fecha de compra:</b> <span style="font-family: 'Cera Pro';font-weight: 700;" t-out="object.get_invoice_date_print()"/></li>
                                 </ul>
                                 
                                 <table style="width:100%">
                                     <tr style="width:100%">
                                         <td style="width:49%;">
-                                            <div style="text-align:left;font-family: 'Cera Pro';font-style: normal;font-size: 16px;line-height: 20px;">
-                                                <b style="font-weight: 700;">Valor libre de impuesto</b>
+                                            <div style="text-align:left;font-family: 'Cera_Pro_Bold';font-style: normal;font-size: 16px;line-height: 20px;">
+                                                <b style="font-weight: 700;font-family: 'Cera_Pro_Bold';">Valor libre de impuesto</b>
                                             </div>
                                         </td>
                                         <td style="width:49%;">
-                                            <div style="text-align:right;font-family: 'Cera Pro';font-style: normal;font-size: 16px;line-height: 20px;text-align: right;">
-                                                <b style="font-weight: 500;"><span t-out="object.get_amount_str(object.amount_untaxed)"/> COP</b>
+                                            <div style="text-align:right;font-family: 'Cera_Pro_Bold';font-style: normal;font-size: 16px;line-height: 20px;text-align: right;">
+                                                <b style="font-weight: 500;font-family: 'Cera_Pro_Bold';"><span t-out="object.get_amount_str(object.amount_untaxed)"/> COP</b>
                                             </div>
                                         </td>
                                     </tr>
@@ -74,13 +91,13 @@
                                         <table style="width:100%">
                                             <tr style="width:100%">
                                                 <td style="width:49%;">
-                                                    <div style="margin-top:5px;text-align:left;font-family: 'Cera Pro';font-style: normal;font-size: 16px;line-height: 20px;">
-                                                        <b style="font-weight: 700;"><t t-esc="item['tax_group_name']"/></b>
+                                                    <div style="margin-top:5px;text-align:left;font-family: 'Cera_Pro_Bold';font-style: normal;font-size: 16px;line-height: 20px;">
+                                                        <b style="font-weight: 700;font-family: 'Cera_Pro_Bold';"><t t-esc="item['tax_group_name']"/></b>
                                                     </div>
                                                 </td>
                                                 <td style="width:49%;">
-                                                    <div style="margin-top:5px;text-align:right;font-family: 'Cera Pro';font-style: normal;font-size: 16px;line-height: 20px;text-align: right;">
-                                                        <b style="font-weight: 500;"><t t-esc="object.get_amount_str(item['tax_group_amount'])"/> COP</b>
+                                                    <div style="margin-top:5px;text-align:right;font-family: 'Cera_Pro_Bold';font-style: normal;font-size: 16px;line-height: 20px;text-align: right;">
+                                                        <b style="font-weight: 500;font-family: 'Cera_Pro_Bold';"><t t-esc="object.get_amount_str(item['tax_group_amount'])"/> COP</b>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -92,13 +109,13 @@
                                 <table style="width:100%">
                                     <tr style="width:100%">
                                         <td style="width:49%;">
-                                            <div style="margin-top:25px;text-align:left;font-family: 'Cera Pro';font-style: normal;font-size: 28.1784px;line-height: 35px;">
-                                                <b style="font-weight: 700;">Valor total</b>
+                                            <div style="margin-top:25px;text-align:left;font-family: 'Cera_Pro_Bold';font-style: normal;font-size: 28.1784px;line-height: 35px;">
+                                                <b style="font-weight: 700;font-family: 'Cera_Pro_Bold';">Valor total</b>
                                             </div>
                                         </td>
                                         <td style="width:49%;">
-                                            <div style="margin-top:25px;text-align:right;font-family: 'Cera Pro';font-style: normal;font-size: 28.1784px;line-height: 35px;text-align: right;color:#080D1D;">
-                                                <b style="font-weight: 700;"><t t-esc="object.get_amount_str(object.amount_total)"/> COP</b>
+                                            <div style="margin-top:25px;text-align:right;font-family: 'Cera_Pro_Bold';font-style: normal;font-size: 28.1784px;line-height: 35px;text-align: right;color:#080D1D;">
+                                                <b style="font-weight: 700;font-family: 'Cera_Pro_Bold';"><t t-esc="object.get_amount_str(object.amount_total)"/> COP</b>
                                             </div>
                                         </td>
                                     </tr>
@@ -108,7 +125,7 @@
 
                                 <p style="margin-top:30px;font-family: 'Cera Pro';font-style: normal;font-weight: 500;font-size: 13px;line-height: 16px;text-decoration-line: underline;color: #276EF1;">Puede ver tus movimientos en tus transacciones</p>
 
-                                <a target="_blank" t-att-href="object.get_invoice_url()" style="margin-top:50px;display: flex;flex-direction: column;justify-content: center;align-items: center;padding: 14.4797px 34.7513px;gap: 14.48px;width: 254.84px;height: 58.55px;left: calc(50% - 254.84px/2 - 129.58px);top: calc(50% - 58.55px/2 + 383.58px);background-color: #01D5D8;border-radius: 34.7513px;"><span style="font-family: 'Cera Pro';font-style: normal;font-weight: 700;font-size: 20.2716px;line-height: 29px;color: #080D1D;flex: none;order: 0;flex-grow: 0;">Descargar factura</span></a>
+                                <a target="_blank" t-att-href="object.get_invoice_url()" style="margin-top:50px;display: flex;flex-direction: column;justify-content: center;align-items: center;padding: 14.4797px 34.7513px;gap: 14.48px;width: 254.84px;height: 58.55px;left: calc(50% - 254.84px/2 - 129.58px);top: calc(50% - 58.55px/2 + 383.58px);background-color: #01D5D8;border-radius: 34.7513px;"><span style="font-family: 'Cera_Pro_Bold';font-style: normal;font-weight: 700;font-size: 20.2716px;line-height: 29px;color: #080D1D;flex: none;order: 0;flex-grow: 0;">Descargar factura</span></a>
 
                                 <p style="margin-top:50px;width: 513.5px;height: 22px;left: calc(50% - 513.5px/2 - 0.25px);bottom: 81.57px;font-family: 'Cera Pro';font-style: normal;font-weight: 400;font-size: 13px;line-height: 170%;color: #676767;">Esto no es un recibo de pago. es un resumen del movimiento realizado</p>
                             </div>
